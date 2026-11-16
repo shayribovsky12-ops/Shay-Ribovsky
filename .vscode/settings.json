@@ -1,0 +1,6 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+    "jupyter.kernels.Trusted": [
+        "${workspaceFolder}/.venv/Scripts/python.exe"
+    ]
+}
