@@ -1,0 +1,121 @@
+QWidget {
+    background-color: #f4f6f9;
+    color: #1e293b;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+}
+
+QLabel#titleLabel {
+    font-size: 22px;
+    font-weight: bold;
+    color: #0f172a;
+    padding-bottom: 4px;
+}
+
+QLabel#fileLabel {
+    color: #475569;
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 6px 10px;
+}
+
+QLabel#sectionLabel {
+    font-weight: bold;
+    color: #334155;
+}
+
+QPushButton {
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #1d4ed8;
+}
+
+QPushButton:pressed {
+    background-color: #1e40af;
+}
+
+QPushButton#updateButton {
+    background-color: #16a34a;
+}
+
+QPushButton#updateButton:hover {
+    background-color: #15803d;
+}
+
+QPushButton#updateButton:pressed {
+    background-color: #166534;
+}
+
+QPushButton#aboutButton {
+    background-color: #475569;
+}
+
+QPushButton#aboutButton:hover {
+    background-color: #334155;
+}
+
+QPushButton#aboutButton:pressed {
+    background-color: #1e293b;
+}
+
+QSpinBox {
+    background-color: #ffffff;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 6px 10px;
+    min-width: 90px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+QSpinBox:focus {
+    border: 2px solid #2563eb;
+}
+
+QTableWidget {
+    background-color: #ffffff;
+    alternate-background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    gridline-color: #e2e8f0;
+    selection-background-color: #dbeafe;
+    selection-color: #0f172a;
+}
+
+QHeaderView::section {
+    background-color: #1e293b;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 8px;
+    border: none;
+    border-right: 1px solid #334155;
+}
+
+QTableCornerButton::section {
+    background-color: #1e293b;
+    border: none;
+}
+
+QLabel#aboutTitle {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0f172a;
+    padding-bottom: 6px;
+}
+
+QLabel#aboutInfo {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 10px 12px;
+    color: #1e293b;
+}
