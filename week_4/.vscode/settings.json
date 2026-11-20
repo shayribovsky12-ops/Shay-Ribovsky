@@ -1,6 +1,7 @@
 {
-    "python.defaultInterpreterPath": "${workspaceFolder}/../.venv/Scripts/python.exe",
+    "python.defaultInterpreterPath": "c:/shay afeka/mechatronik/.venv/Scripts/python.exe",
+    "python.terminal.activateEnvironment": false,
     "jupyter.kernels.Trusted": [
-        "${workspaceFolder}/../.venv/Scripts/python.exe"
+        "c:/shay afeka/mechatronik/.venv/Scripts/python.exe"
     ]
 }
