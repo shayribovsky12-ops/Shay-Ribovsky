@@ -2,18 +2,7 @@ import os
 import platform
 import subprocess
 from PySide6.QtCore import Qt
-from PySide6.QtWidgets import (
-    QApplication,
-    QWidget,
-    QPushButton,
-    QTableWidget,
-    QTableWidgetItem,
-    QSpinBox,
-    QFileDialog,
-    QVBoxLayout,
-    QHBoxLayout,
-    QHeaderView,
-)
+from PySide6.QtWidgets import ( QApplication, QWidget, QPushButton, QTableWidget, QTableWidgetItem, QSpinBox, QFileDialog, QVBoxLayout, QHBoxLayout, QHeaderView,)
 from About import AboutWindow
 
 
