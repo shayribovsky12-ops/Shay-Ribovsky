@@ -5,26 +5,6 @@ QWidget {
     font-size: 14px;
 }
 
-QLabel#titleLabel {
-    font-size: 22px;
-    font-weight: bold;
-    color: #0f172a;
-    padding-bottom: 4px;
-}
-
-QLabel#fileLabel {
-    color: #475569;
-    background-color: #ffffff;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    padding: 6px 10px;
-}
-
-QLabel#sectionLabel {
-    font-weight: bold;
-    color: #334155;
-}
-
 QPushButton {
     background-color: #2563eb;
     color: #ffffff;
@@ -83,7 +63,6 @@ QSpinBox:focus {
 
 QTableWidget {
     background-color: #ffffff;
-    alternate-background-color: #f8fafc;
     border: 1px solid #cbd5e1;
     border-radius: 6px;
     gridline-color: #e2e8f0;
@@ -103,19 +82,4 @@ QHeaderView::section {
 QTableCornerButton::section {
     background-color: #1e293b;
     border: none;
-}
-
-QLabel#aboutTitle {
-    font-size: 20px;
-    font-weight: bold;
-    color: #0f172a;
-    padding-bottom: 6px;
-}
-
-QLabel#aboutInfo {
-    background-color: #ffffff;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    padding: 10px 12px;
-    color: #1e293b;
 }

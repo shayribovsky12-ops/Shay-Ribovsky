@@ -6,7 +6,6 @@ from PySide6.QtWidgets import (
     QApplication,
     QWidget,
     QPushButton,
-    QLabel,
     QTableWidget,
     QTableWidgetItem,
     QSpinBox,
@@ -14,7 +13,6 @@ from PySide6.QtWidgets import (
     QVBoxLayout,
     QHBoxLayout,
     QHeaderView,
-    QAbstractItemView,
 )
 from About import AboutWindow
 
@@ -36,27 +34,17 @@ class GradesWindow(QWidget):
         self.setGeometry(100, 100, 700, 600)
 
         main_layout = QVBoxLayout()
-        main_layout.setContentsMargins(20, 20, 20, 20)
-        main_layout.setSpacing(14)
-
-        self.title_label = QLabel("Student Grades Correction")
-        self.title_label.setObjectName("titleLabel")
-        main_layout.addWidget(self.title_label)
 
         top_bar = QHBoxLayout()
 
         self.load_button = QPushButton("Load File")
         self.load_button.clicked.connect(self.load_file)
 
-        self.file_label = QLabel("No file selected")
-        self.file_label.setObjectName("fileLabel")
-
         self.about_button = QPushButton("About")
         self.about_button.setObjectName("aboutButton")
         self.about_button.clicked.connect(self.open_about)
 
         top_bar.addWidget(self.load_button)
-        top_bar.addWidget(self.file_label, 1)
         top_bar.addWidget(self.about_button)
         main_layout.addLayout(top_bar)
 
@@ -65,14 +53,9 @@ class GradesWindow(QWidget):
             ["ID", "Original Grades", "Corrected Grades"]
         )
         self.table.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
-        self.table.setAlternatingRowColors(True)
-        self.table.setEditTriggers(QAbstractItemView.NoEditTriggers)
-        main_layout.addWidget(self.table, 1)
+        main_layout.addWidget(self.table)
 
         bottom_bar = QHBoxLayout()
-
-        self.bonus_label = QLabel("Bonus Points:")
-        self.bonus_label.setObjectName("sectionLabel")
 
         self.bonus_spinbox = QSpinBox()
         self.bonus_spinbox.setRange(0, 100)
@@ -82,9 +65,7 @@ class GradesWindow(QWidget):
         self.update_button.setObjectName("updateButton")
         self.update_button.clicked.connect(self.update_file)
 
-        bottom_bar.addWidget(self.bonus_label)
         bottom_bar.addWidget(self.bonus_spinbox)
-        bottom_bar.addStretch()
         bottom_bar.addWidget(self.update_button)
         main_layout.addLayout(bottom_bar)
 
@@ -92,13 +73,9 @@ class GradesWindow(QWidget):
 
     def load_file(self):
         file_path, _ = QFileDialog.getOpenFileName(
-            self, "Select Grades File", "", "CSV Files (*.csv)"
+            self, "Select File", "", "CSV Files (*.csv)"
         )
-        if not file_path:
-            return
-
         self.selected_file = file_path
-        self.file_label.setText(os.path.basename(file_path))
 
         self.student_ids = []
         self.original_grades = []
@@ -107,19 +84,16 @@ class GradesWindow(QWidget):
         with open(self.selected_file, "r") as f:
             self.header = f.readline()
             for line in f:
-                if line.strip():
-                    parts = line.strip().split(",")
-                    student_id = parts[0].strip()
-                    grade = int(parts[1].strip())
-                    self.student_ids.append(student_id)
-                    self.original_grades.append(grade)
-                    self.corrected_grades.append(grade)
+                parts = line.split(",")
+                student_id = parts[0].strip()
+                grade = int(parts[1])
+                self.student_ids.append(student_id)
+                self.original_grades.append(grade)
+                self.corrected_grades.append(grade)
 
-        self.bonus_spinbox.setValue(0)
         self.update_table()
 
     def update_table(self):
-        self.table.setRowCount(max(50, len(self.student_ids)))
         self.table.clearContents()
 
         for row in range(len(self.student_ids)):
@@ -148,9 +122,6 @@ class GradesWindow(QWidget):
         self.update_table()
 
     def update_file(self):
-        if not self.selected_file:
-            return
-
         with open(self.selected_file, "w") as f:
             f.write(self.header)
             for i in range(len(self.student_ids)):
