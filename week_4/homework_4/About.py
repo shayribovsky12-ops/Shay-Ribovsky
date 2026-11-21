@@ -24,7 +24,7 @@ class AboutWindow(QWidget):
 
         self.github_label = QLabel(
             'GitHub: <a href="https://github.com/YOUR_USERNAME/YOUR_REPO">'
-            'https://github.com/YOUR_USERNAME/YOUR_REPO</a>',
+            'https://github.comhttps://github.com/shayribovsky12-ops/Shay-Ribovsky.git</a>',
             self,
         )
         self.github_label.setOpenExternalLinks(True)
